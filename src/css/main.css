@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+}
+
+.descriptionText {
+    top: 0px;
+    background: #fff;
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+}
