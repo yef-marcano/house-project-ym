@@ -1,15 +1,21 @@
 var scene, camera, renderer, mesh;
 var meshFloor, ambientLight, light;
 
-var crate, crateTexture, crateNormalMap, crateBumpMap;
+var create, crateTexture, crateNormalMap, crateBumpMap;
+
 
 var keyboard = {};
 // Persona height altura del personaje, velocidad en la que camina
 var player = { height:2, speed:0.2, turnSpeed:Math.PI*0.02 };
 var USE_WIREFRAME = false;
+// renderer.setClearColor( 0xffffff, 0);
+
 
 function init(){
 	scene = new THREE.Scene();
+	//fondo blanco
+	scene.background = new THREE.Color( 0xffffff );
+
 
 	//Perspectiva de la camara
 	camera = new THREE.PerspectiveCamera(90, 1280/720, 0.1, 1000);
@@ -28,10 +34,10 @@ function init(){
 	scene.add(mesh);
 	
 
-    // Piso  20, 20 es grande mediano...
+    // Piso  20, 25 es grande mediano...
 	meshFloor = new THREE.Mesh(
-		new THREE.PlaneGeometry(20,20, 10,10),
-		new THREE.MeshPhongMaterial({color:0xffffff, wireframe:USE_WIREFRAME})
+		new THREE.PlaneGeometry(20,25, 10,10),
+		new THREE.MeshPhongMaterial({color:0xfffff0, wireframe:USE_WIREFRAME})
 	);
 
 
@@ -39,48 +45,49 @@ function init(){
 	meshFloor.receiveShadow = true;
 	scene.add(meshFloor);
 	
-	ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+
+	//luz de la casa
+	ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
 	scene.add(ambientLight);
 	
 	light = new THREE.PointLight(0xffffff, 0.8, 18);
-	light.position.set(-3,6,-3);
+	light.position.set(-3,10,-3);
 	light.castShadow = true;
 	light.shadow.camera.near = 0.1;
-	light.shadow.camera.far = 25;
+	light.shadow.camera.far = 30;
 	scene.add(light);
 	
 	
-	var textureLoader = new THREE.TextureLoader();
-	crateTexture = textureLoader.load("src/texture/crate0_diffuse.jpg");
-	crateBumpMap = textureLoader.load("src/texture/crate0_bump.jpg");
-	crateNormalMap = textureLoader.load("src/texture/crate0_normal.jpg");
+	// var textureLoader = new THREE.TextureLoader();
+	// crateTexture = textureLoader.load("src/texture/crate0_diffuse.jpg");
+	// crateBumpMap = textureLoader.load("src/texture/crate0_bump.jpg");
+	// crateNormalMap = textureLoader.load("src/texture/crate0_normal.jpg");
 	
 
-	// Caja marron
-	crate = new THREE.Mesh(
-		new THREE.BoxGeometry(3,3,3),
-		new THREE.MeshPhongMaterial({
-			color:0xffffff,
-			map:crateTexture,
-			bumpMap:crateBumpMap,
-			normalMap:crateNormalMap
-		})
-	);
-	scene.add(crate);
-	crate.position.set(-15, 3/2, -5.5);
-	crate.receiveShadow = true;
-	crate.castShadow = true;
+	// crate = new THREE.Mesh(
+	// 	new THREE.BoxGeometry(3,3,3),
+	// 	new THREE.MeshPhongMaterial({
+	// 		color:0xffffff,
+	// 		map:crateTexture,
+	// 		bumpMap:crateBumpMap,
+	// 		normalMap:crateNormalMap
+	// 	})
+	// );
+	// scene.add(crate);
+	// crate.position.set(-15, 3/2, -5.5);
+	// crate.receiveShadow = true;
+	// crate.castShadow = true;
 	// Caja marron
 	
 	// Model/material caga de casa!
 	var mtlLoader = new THREE.MTLLoader();
-	mtlLoader.load("src/models/fase4.mtl", function(materials){
+	mtlLoader.load("src/models/Casa.mtl", function(materials){
 		
 		materials.preload();
 		var objLoader = new THREE.OBJLoader();
 		objLoader.setMaterials(materials);
 		
-		objLoader.load("src/models/fase4.obj", function(mesh){
+		objLoader.load("src/models/Casa.obj", function(mesh){
 		
 			mesh.traverse(function(node){
 				if( node instanceof THREE.Mesh ){
@@ -90,18 +97,20 @@ function init(){
 			});
 		
 			scene.add(mesh);
-			mesh.position.set(-5, 0, 4);
-			mesh.rotation.y = -Math.PI/4;
+			mesh.position.set(0, -0.5, -0.4);
+			mesh.rotation.y = -Math.PI/1;
 		});
 		
 	});
 	
 	
 	// Posicion de la camara cuando carga
-	camera.position.set(0, player.height, -15);
+	camera.position.set(0, player.height, -18);
 	camera.lookAt(new THREE.Vector3(0,player.height,0));
 	
 	renderer = new THREE.WebGLRenderer();
+
+
 
 	// Elimino el scroll, no me gusta la visual
 	document.body.style.overflow = 'hidden';
@@ -123,7 +132,7 @@ function animate(){
 	
 	mesh.rotation.x += 0.01;
 	mesh.rotation.y += 0.02;
-	crate.rotation.y += 0.01;
+	// crate.rotation.y += 0.01;
 	
 	if(keyboard[87]){ // W key
 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
@@ -148,8 +157,9 @@ function animate(){
 	if(keyboard[39]){ // right arrow key
 		camera.rotation.y += player.turnSpeed;
 	}
-	
+
 	renderer.render(scene, camera);
+
 }
 
 function keyDown(event){
