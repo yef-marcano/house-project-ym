@@ -39,7 +39,7 @@ function init(){
 	meshFloor.receiveShadow = true;
 	scene.add(meshFloor);
 	
-	ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+	ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
 	scene.add(ambientLight);
 	
 	light = new THREE.PointLight(0xffffff, 0.8, 18);
@@ -67,7 +67,7 @@ function init(){
 		})
 	);
 	scene.add(crate);
-	crate.position.set(-5, 3/2, -5.5);
+	crate.position.set(-15, 3/2, -5.5);
 	crate.receiveShadow = true;
 	crate.castShadow = true;
 	// Caja marron
