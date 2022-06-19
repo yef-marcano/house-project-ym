@@ -37,7 +37,7 @@ function init(){
     // Piso  20, 25 es grande mediano...
 	meshFloor = new THREE.Mesh(
 		new THREE.PlaneGeometry(20,25, 10,10),
-		new THREE.MeshPhongMaterial({color:0xfffff0, wireframe:USE_WIREFRAME})
+		new THREE.MeshPhongMaterial({color:0x008000, wireframe:USE_WIREFRAME})
 	);
 
 
@@ -97,7 +97,7 @@ function init(){
 			});
 		
 			scene.add(mesh);
-			mesh.position.set(0, -0.5, -0.4);
+			mesh.position.set(0, -0.7, -0.4);
 			mesh.rotation.y = -Math.PI/1;
 		});
 		
