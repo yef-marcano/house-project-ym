@@ -3,158 +3,137 @@ var meshFloor, ambientLight, light;
 
 var create, crateTexture, crateNormalMap, crateBumpMap;
 
+const width = window.innerWidth;
+const height = window.innerHeight;
 
 var keyboard = {};
 // Persona height altura del personaje, velocidad en la que camina
-var player = { height:2, speed:0.2, turnSpeed:Math.PI*0.02 };
+var player = {
+	height: 2,
+	speed: 0.2,
+	turnSpeed: Math.PI * 0.02
+};
+
 var USE_WIREFRAME = false;
-// renderer.setClearColor( 0xffffff, 0);
 
+scene = new THREE.Scene();
 
-function init(){
-	scene = new THREE.Scene();
-	//fondo blanco
-	scene.background = new THREE.Color( 0xffffff );
+renderer = new THREE.WebGLRenderer();
 
-
-	//Perspectiva de la camara
-	camera = new THREE.PerspectiveCamera(90, 1280/720, 0.1, 1000);
-	
-
-	//Cubo rojo
-	mesh = new THREE.Mesh(
-		new THREE.BoxGeometry(1,1,1),
-		new THREE.MeshPhongMaterial({color:0xff4444, wireframe:USE_WIREFRAME})
-	);
-
-	// Agrego un cubo en el cielo
-	mesh.position.y += 10;
-	mesh.receiveShadow = true;
-	mesh.castShadow = true;
-	scene.add(mesh);
-	
-
-    // Piso  20, 25 es grande mediano...
-	meshFloor = new THREE.Mesh(
-		new THREE.PlaneGeometry(20,25, 10,10),
-		new THREE.MeshPhongMaterial({color:0x008000, wireframe:USE_WIREFRAME})
-	);
-
-
-	meshFloor.rotation.x -= Math.PI / 2;
-	meshFloor.receiveShadow = true;
-	scene.add(meshFloor);
-	
-
-	//luz de la casa
-	ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-	scene.add(ambientLight);
-	
-	light = new THREE.PointLight(0xffffff, 0.8, 18);
-	light.position.set(-3,10,-3);
-	light.castShadow = true;
-	light.shadow.camera.near = 0.1;
-	light.shadow.camera.far = 30;
-	scene.add(light);
-	
-	
-	// var textureLoader = new THREE.TextureLoader();
-	// crateTexture = textureLoader.load("src/texture/crate0_diffuse.jpg");
-	// crateBumpMap = textureLoader.load("src/texture/crate0_bump.jpg");
-	// crateNormalMap = textureLoader.load("src/texture/crate0_normal.jpg");
-	
-
-	// crate = new THREE.Mesh(
-	// 	new THREE.BoxGeometry(3,3,3),
-	// 	new THREE.MeshPhongMaterial({
-	// 		color:0xffffff,
-	// 		map:crateTexture,
-	// 		bumpMap:crateBumpMap,
-	// 		normalMap:crateNormalMap
-	// 	})
-	// );
-	// scene.add(crate);
-	// crate.position.set(-15, 3/2, -5.5);
-	// crate.receiveShadow = true;
-	// crate.castShadow = true;
-	// Caja marron
-	
-	// Model/material caga de casa!
-	var mtlLoader = new THREE.MTLLoader();
-	mtlLoader.load("src/models/Casa.mtl", function(materials){
-		
-		materials.preload();
-		var objLoader = new THREE.OBJLoader();
-		objLoader.setMaterials(materials);
-		
-		objLoader.load("src/models/Casa.obj", function(mesh){
-		
-			mesh.traverse(function(node){
-				if( node instanceof THREE.Mesh ){
-					node.castShadow = true;
-					node.receiveShadow = true;
-				}
-			});
-		
-			scene.add(mesh);
-			mesh.position.set(0, -0.7, -0.4);
-			mesh.rotation.y = -Math.PI/1;
-		});
-		
-	});
-	
-	
-	// Posicion de la camara cuando carga
-	camera.position.set(0, player.height, -18);
-	camera.lookAt(new THREE.Vector3(0,player.height,0));
-	
-	renderer = new THREE.WebGLRenderer();
-
-
+function init() {
 
 	// Elimino el scroll, no me gusta la visual
 	document.body.style.overflow = 'hidden';
 
-	// El set del maximo de la pantalla
-	renderer.setSize(window.innerWidth, window.innerHeight);
-	// renderer.setSize(1280, 720);
+	//Perspectiva de la camara
+	camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
 
+	//luz de la casa
+	ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+	scene.add(ambientLight);
+
+	light = new THREE.PointLight(0xffffff, 0.8, 18);
+	light.position.set(-3, 10, -3);
+	light.castShadow = true;
+	light.shadow.camera.near = 0.1;
+	light.shadow.camera.far = 30;
+	scene.add(light);
+
+
+	// Model/material caga de casa!
+	var mtlLoader = new THREE.MTLLoader();
+	mtlLoader.load("src/models/Casa.mtl", function (materials) {
+
+		materials.preload();
+		var objLoader = new THREE.OBJLoader();
+		objLoader.setMaterials(materials);
+
+		objLoader.load("src/models/Casa.obj", function (mesh) {
+
+			mesh.traverse(function (node) {
+				if (node instanceof THREE.Mesh) {
+					node.castShadow = true;
+					node.receiveShadow = true;
+				}
+			});
+
+			scene.add(mesh);
+			mesh.position.set(0, -0.7, -0.4);
+			mesh.rotation.y = -Math.PI / 1;
+		});
+
+	});
+
+
+	// Posicion de la camara cuando carga
+	camera.position.set(0, player.height, -18);
+	camera.lookAt(new THREE.Vector3(0, player.height, 0));
+
+	// El set del maximo de la pantalla
+	renderer.setSize(width, height);
+	renderer.setClearColor(0xcce0ff, 1);
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.BasicShadowMap;
-	
 	document.body.appendChild(renderer.domElement);
-	
+
 	animate();
+
 }
 
-function animate(){
-	requestAnimationFrame(animate);
-	
-	mesh.rotation.x += 0.01;
-	mesh.rotation.y += 0.02;
-	// crate.rotation.y += 0.01;
-	
-	if(keyboard[87]){ // W key
+
+function movimientoWSAD() {
+
+	if (keyboard[87]) { // W key
 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
 		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
 	}
-	if(keyboard[83]){ // S key
+	if (keyboard[83]) { // S key
 		camera.position.x += Math.sin(camera.rotation.y) * player.speed;
 		camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
 	}
-	if(keyboard[65]){ // A key
-		camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
-		camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
+	if (keyboard[65]) { // A key
+		camera.position.x += Math.sin(camera.rotation.y + Math.PI / 2) * player.speed;
+		camera.position.z += -Math.cos(camera.rotation.y + Math.PI / 2) * player.speed;
 	}
-	if(keyboard[68]){ // D key
-		camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
-		camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
+	if (keyboard[68]) { // D key
+		camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
+		camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
 	}
-	
-	if(keyboard[37]){ // left arrow key
+
+}
+
+function createGrass() {
+	const geometry = new THREE.PlaneGeometry(1000, 1000);
+
+	const texture = new THREE.TextureLoader().load('/src/texture/house-bg-piso.jpg');
+	texture.wrapS = THREE.RepeatWrapping;
+	texture.wrapT = THREE.RepeatWrapping;
+	texture.repeat.set(100, 100);
+
+	const grassMaterial = new THREE.MeshBasicMaterial({
+		map: texture
+	});
+
+	const grass = new THREE.Mesh(geometry, grassMaterial);
+
+	grass.rotation.x = -0.5 * Math.PI;
+
+	scene.add(grass);
+}
+
+function create() {
+	createGrass();
+}
+
+create();
+
+function animate() {
+	requestAnimationFrame(animate);
+	movimientoWSAD();
+	if (keyboard[37]) { // left arrow key
 		camera.rotation.y -= player.turnSpeed;
 	}
-	if(keyboard[39]){ // right arrow key
+	if (keyboard[39]) { // right arrow key
 		camera.rotation.y += player.turnSpeed;
 	}
 
@@ -162,13 +141,14 @@ function animate(){
 
 }
 
-function keyDown(event){
+function keyDown(event) {
 	keyboard[event.keyCode] = true;
 }
 
-function keyUp(event){
+function keyUp(event) {
 	keyboard[event.keyCode] = false;
 }
+
 
 window.addEventListener('keydown', keyDown);
 window.addEventListener('keyup', keyUp);
