@@ -8,7 +8,7 @@ const height = window.innerHeight;
 
 var keyboard = {};
 // Persona height altura del personaje, velocidad en la que camina
-var player = {
+const player = {
 	height: 2,
 	speed: 0.2,
 	turnSpeed: Math.PI * 0.02
@@ -27,7 +27,6 @@ function init() {
 
 	//Perspectiva de la camara
 	camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
-
 	//luz de la casa
 	ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
 	scene.add(ambientLight);
@@ -67,6 +66,7 @@ function init() {
 
 	// Posicion de la camara cuando carga
 	camera.position.set(0, player.height, -18);
+	
 	camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 	// El set del maximo de la pantalla
@@ -80,9 +80,12 @@ function init() {
 
 }
 
+function spacemax(){
+}
 
 function movimientoWSAD() {
 
+	spacemax();
 	if (keyboard[87]) { // W key
 		camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
 		camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
@@ -99,6 +102,7 @@ function movimientoWSAD() {
 		camera.position.x += Math.sin(camera.rotation.y - Math.PI / 2) * player.speed;
 		camera.position.z += -Math.cos(camera.rotation.y - Math.PI / 2) * player.speed;
 	}
+
 
 }
 
