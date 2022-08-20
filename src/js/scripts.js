@@ -28,10 +28,10 @@ function init() {
 	//Perspectiva de la camara
 	camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
 	//luz de la casa
-	ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+	ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
 	scene.add(ambientLight);
 
-	light = new THREE.PointLight(0xffffff, 0.8, 18);
+	light = new THREE.PointLight(0xffffff, 0, 18);
 	light.position.set(-3, 10, -3);
 	light.castShadow = true;
 	light.shadow.camera.near = 0.1;
@@ -41,13 +41,15 @@ function init() {
 
 	// Model/material caga de casa!
 	var mtlLoader = new THREE.MTLLoader();
-	mtlLoader.load("src/models/Casa.mtl", function (materials) {
+	mtlLoader.setPath('src/models/');
+	mtlLoader.load("House1.mtl", function (materials) {
 
 		materials.preload();
 		var objLoader = new THREE.OBJLoader();
 		objLoader.setMaterials(materials);
+		objLoader.setPath('src/models/');
 
-		objLoader.load("src/models/Casa.obj", function (mesh) {
+		objLoader.load("House1.obj", function (mesh) {
 
 			mesh.traverse(function (node) {
 				if (node instanceof THREE.Mesh) {
@@ -57,21 +59,22 @@ function init() {
 			});
 
 			scene.add(mesh);
-			mesh.position.set(0, -0.7, -0.4);
-			mesh.rotation.y = -Math.PI / 1;
+			mesh.position.set(4.5, 0.3,-1, -0.4);
+			mesh.rotation.y = -Math.PI /1;
 		});
 
 	});
 
 
 	// Posicion de la camara cuando carga
-	camera.position.set(0, player.height, -18);
+	// posiion en 10
+	camera.position.set(0, player.height, -10);
 	
 	camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
 	// El set del maximo de la pantalla
 	renderer.setSize(width, height);
-	renderer.setClearColor(0xcce0ff, 1);
+	renderer.setClearColor(0xcce0ff, 0.9);
 	renderer.shadowMap.enabled = true;
 	renderer.shadowMap.type = THREE.BasicShadowMap;
 	document.body.appendChild(renderer.domElement);
@@ -81,6 +84,13 @@ function init() {
 }
 
 function spacemax(){
+}
+
+function verAbajo(){
+	camera.position.set(0, player.height, -10);
+}
+function verArriba(){
+	camera.position.set(0, 4, 1);
 }
 
 function movimientoWSAD() {
@@ -109,7 +119,7 @@ function movimientoWSAD() {
 function createGrass() {
 	const geometry = new THREE.PlaneGeometry(1000, 1000);
 
-	const texture = new THREE.TextureLoader().load('/src/texture/house-bg-piso.jpg');
+	const texture = new THREE.TextureLoader().load('/src/texture/Polished_Concrete_Old.jpg');
 	texture.wrapS = THREE.RepeatWrapping;
 	texture.wrapT = THREE.RepeatWrapping;
 	texture.repeat.set(100, 100);
