@@ -10,12 +10,24 @@
 	<script src="./src/js/OBJLoader.js"></script>
 	<script src="./src/js/MTLLoader.js"></script>
 	<script src="./src/js/scripts.js"></script>
+	<style>
+		.container{
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+
+		}
+	</style>
 </head>
 
 <body>
 
 	<body>
-		<span class="descriptionText"><input type="button" value="Cambiar Wireframe"
+		<span class="descriptionText container">
+			<button onclick="verArriba()">Segundo piso</button>
+			<button onclick="verAbajo()"> Primer piso</button>
+			<input type="button" value="Cambiar Wireframe"
 				onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" /><br />Movimiento
 			WASD.<br />Flechas movimiento de camara.</span>
 	</body>
