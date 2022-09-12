@@ -3,6 +3,8 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdn.tailwindcss.com"></script>
 	<title>Proyecto visualización de casa YM</title>
 	<link rel="stylesheet" href="./src/css/main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
@@ -11,22 +13,15 @@
 	<script src="./src/js/MTLLoader.js"></script>
 	<script src="./src/js/scripts.js"></script>
 	<style>
-		.container{
-			height: 100%;
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-
-		}
 	</style>
 </head>
 
 <body>
 
 	<body>
-		<span class="descriptionText container">
-			<button onclick="verArriba()">Segundo piso</button>
-			<button onclick="verAbajo()"> Primer piso</button>
+		<span class="descriptionText flex  flex-col h-screen w-120 content-center place-content-center">
+			<div class="inline-flex m-1 justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" onclick="verArriba()">Segundo piso</div>
+			<div class="inline-flex m-1 justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" onclick="verAbajo()"> Primer piso</div>
 			<input type="button" value="Cambiar Wireframe"
 				onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" /><br />Movimiento
 			WASD.<br />Flechas movimiento de camara.</span>

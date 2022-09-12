@@ -28,10 +28,10 @@ function init() {
 	//Perspectiva de la camara
 	camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
 	//luz de la casa
-	ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+	ambientLight = new THREE.AmbientLight(0xffffff, 1);
 	scene.add(ambientLight);
 
-	light = new THREE.PointLight(0xffffff, 0, 18);
+	light = new THREE.PointLight(0xffffff, 0, 28);
 	light.position.set(-3, 10, -3);
 	light.castShadow = true;
 	light.shadow.camera.near = 0.1;
@@ -48,7 +48,6 @@ function init() {
 		var objLoader = new THREE.OBJLoader();
 		objLoader.setMaterials(materials);
 		objLoader.setPath('src/models/');
-
 		objLoader.load("House1.obj", function (mesh) {
 
 			mesh.traverse(function (node) {
