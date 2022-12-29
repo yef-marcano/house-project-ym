@@ -23,9 +23,9 @@ body {
     background-color: #ffffff;
     bottom: -50px;
     height: 144px;
-    left: 261px;
+    left: 100%;
     top: -34px;
-    width: 111px;
+    width: 109px;
     box-shadow: 0px 0px 0px 0px #f66969;
     -webkit-mask-image: radial-gradient(circle at bottom right, transparent 0, transparent  110px, black 30px);
     -webkit-mask-position: bottom right;
@@ -41,3 +41,6 @@ body {
     display: flex;
     justify-content: center;
 }   
+span#menu {
+    width: 250px;
+}
