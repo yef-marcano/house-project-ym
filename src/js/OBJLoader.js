@@ -612,7 +612,7 @@
 
 							var materialLine = new THREE.LineBasicMaterial();
 							materialLine.copy( material );
-							//materialLine.lights = false;
+							materialLine.lights = false;
 							material = materialLine;
 
 						}
