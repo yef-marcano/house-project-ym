@@ -32,3 +32,12 @@ body {
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
 }
+
+.content-center {
+    align-content: center;
+    width: 30%;
+    background-color: white;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+}   
