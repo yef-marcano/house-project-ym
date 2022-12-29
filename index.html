@@ -7,7 +7,7 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<title>Proyecto visualización de casa YM</title>
 	<link rel="stylesheet" href="./src/css/main.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.min.js"></script>
 	<script src="./src/js/OrbitControls.js"></script>
 	<script src="./src/js/OBJLoader.js"></script>
 	<script src="./src/js/MTLLoader.js"></script>
@@ -19,12 +19,29 @@
 <body>
 
 	<body>
-		<span class="descriptionText flex  flex-col h-screen w-120 content-center place-content-center">
+
+		<div style="
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: none;
+	"><span class="flex-col content-center">
+			<input type="button" value="Comenzar juego"
+			onclick="runHose()" /></span>
+		</span></div>
+
+		<span id="menu" style="display: none;" class="descriptionText flex  flex-col h-screen w-120 content-center place-content-center">
 			<div class="inline-flex m-1 justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" onclick="verArriba()">Segundo piso</div>
 			<div class="inline-flex m-1 justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700" onclick="verAbajo()"> Primer piso</div>
 			<input type="button" value="Cambiar Wireframe"
 				onclick="mesh.material.wireframe=!mesh.material.wireframe;meshFloor.material.wireframe=!meshFloor.material.wireframe;" /><br />Movimiento
 			WASD.<br />Flechas movimiento de camara.</span>
+
+
+			
 	</body>
 </body>
 
