@@ -3,6 +3,9 @@ var meshFloor, ambientLight, light;
 
 var create, crateTexture, crateNormalMap, crateBumpMap;
 
+var textureLoader, gltfLoader;
+
+
 const width = window.innerWidth;
 const height = window.innerHeight;
 
@@ -79,6 +82,35 @@ function init() {
 
   });
 
+
+
+
+	var pre = "src/img/TropicalSunnyDay/";
+	var directions  = ["Left", "Right", "Up", "Down", "Front", "Back"];
+	var suf = "2048.jpg";
+	skyboxMats = [];
+	for(var j = 0; j < directions.length; j++){
+		if(j == 3){
+			skyboxMats.push(new THREE.MeshBasicMaterial());
+		}
+		else{
+			skyboxMats.push(
+				new THREE.MeshBasicMaterial({
+					map: new THREE.TextureLoader().load(pre+directions[j]+suf), 
+					side: THREE.BackSide, 
+					transparent: true})
+			);
+		}
+	}
+	var skyGeometry = new THREE.CubeGeometry( 448, 448, 448 );
+	skybox = new THREE.Mesh( skyGeometry, skyboxMats );
+	skybox.position.y = 20;
+	scene.add( skybox );
+
+
+
+
+
   // Posicion de la camara cuando carga
   // posiion en 10
   camera.position.set(0, player.height, -10);
@@ -140,6 +172,7 @@ function movimientoWSAD() {
 function createGrass() {
   const geometry = new THREE.PlaneGeometry(100, 100);
 
+
   const texture = new THREE.TextureLoader().load(
     "/src/texture/Polished_Concrete_Old.jpg"
   );
@@ -187,9 +220,9 @@ const material = new THREE.MeshBasicMaterial({
 const sphere = new THREE.Mesh(geometry, material);
 //scene.add( sphere );
 
-var target = { x: 2, y: 2, z: 2 };
-var camera_offset = { x: 10, y: 10, z: 10 };
-var camera_speed = 0.1;
+var target = { x: 2, y: 1, z: 2 };
+var camera_offset = { x: 15, y: 9, z: 19 };
+var camera_speed = 0.5;
 /*
 function loop(){
 
