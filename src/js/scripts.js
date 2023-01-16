@@ -29,6 +29,8 @@ renderer = new THREE.WebGLRenderer();
 
 camera = new THREE.PerspectiveCamera(90, 1280 / 720, 0.1, 1000);
 
+let piso = 1
+
 function init() {
   // Elimino el scroll, no me gusta la visual
   document.body.style.overflow = "hidden";
@@ -176,14 +178,18 @@ function spacemax() {}
 
 function verAbajo() {
   camera.position.set(0, player.height, -10);
+  piso = 1
 }
+
+
 function verArriba() {
-  camera.position.set(0, 4, 1);
+  camera.position.set(0, 6, 1);
+  piso = 2
 }
 
 function movimientoWSAD() {
   spacemax();
-
+  if (piso == 2) return;
   /* mejorar */
   if (keyboard[87] && camera.position.y < 50) {
     // W key
