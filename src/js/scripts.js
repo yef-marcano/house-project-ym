@@ -84,7 +84,7 @@ function init() {
 
 
 
-
+  //cielo
 	var pre = "src/img/TropicalSunnyDay/";
 	var directions  = ["Left", "Right", "Up", "Down", "Front", "Back"];
 	var suf = "2048.jpg";
@@ -108,12 +108,57 @@ function init() {
 	scene.add( skybox );
 
 
+/*
+  let granoSuelo = 10;
+
+
+
+	var cespedTex = new THREE.TextureLoader().load("src/img/floor0.jpg");
+	cespedTex.wrapS = THREE.RepeatWrapping;
+	cespedTex.wrapT = THREE.RepeatWrapping;
+	cespedTex.repeat.set(granoSuelo,granoSuelo);
+	for(var centrox = -141; centrox <= 141; centrox += 141){
+		for(var centroy = -141; centroy <= 141; centroy += 141){
+			if(centrox != 0 || centroy != 0){
+				var cw = new THREE.MeshLambertMaterial({map:cespedTex, side: THREE.DoubleSide});		
+				var cG = new THREE.PlaneGeometry( 40, 40, 10, 10);
+				var c = new THREE.Mesh( cG, cw );
+				c.rotation.set( 40, 0, 0);
+				//c.position.set(centrox, 0, centroy);
+				c.receiveShadow = true;
+				scene.add(c);
+			}
+		}
+	}*/
+
+
+
+  //calle
+	/*var roadTex = new THREE.TextureLoader().load("src/img/road.jpg");
+	roadTex.wrapS = THREE.RepeatWrapping;
+	roadTex.wrapT = THREE.RepeatWrapping;
+	roadTex.repeat.set(1,25);
+	var pos = 211.5;
+
+
+	for(var i = 0; i < 4; i++){
+		for(var j = 0; j < 1; j++){
+			var mroad = new THREE.MeshLambertMaterial({map:roadTex});		
+			var rG = new THREE.PlaneGeometry(1, 150,30, 10);
+			var r = new THREE.Mesh( rG, mroad, 2 );
+			r.rotation.set(pos*0.2, 0.1, pos*0.2);
+			r.receiveShadow = true;
+			scene.add(r);
+		}
+	}	*/
+
 
 
 
   // Posicion de la camara cuando carga
   // posiion en 10
-  camera.position.set(0, player.height, -10);
+  //camera.position.set(0, player.height, -10);
+  camera.position.set(0, player.height, -20);
 
   camera.lookAt(new THREE.Vector3(0, player.height, 0));
 
@@ -174,7 +219,7 @@ function createGrass() {
 
 
   const texture = new THREE.TextureLoader().load(
-    "/src/texture/Polished_Concrete_Old.jpg"
+    "src/texture/Polished_Concrete_Old.jpg"
   );
   texture.wrapS = THREE.RepeatWrapping;
   texture.wrapT = THREE.RepeatWrapping;
