@@ -42,7 +42,7 @@ function init() {
 
   light = new THREE.PointLight(0xffffff, 0, 28);
   light.position.set(-3, 10, -3);
-  light.castShadow = true;
+  light.castShadow = false;
   light.shadow.camera.near = 0.1;
   light.shadow.camera.far = 30;
   scene.add(light);
@@ -50,12 +50,12 @@ function init() {
   // Model/material caga de casa!
   var mtlLoader = new THREE.MTLLoader();
   mtlLoader.setPath("src/models/");
-  mtlLoader.load("House1.mtl", function (materials) {
+  mtlLoader.load("CasaYeferosfinal.mtl", function (materials) {
     materials.preload();
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath("src/models/");
-    objLoader.load("House1.obj", function (mesh) {
+    objLoader.load("CasaYeferosfinal.obj", function (mesh) {
       mesh.traverse(function (node) {
         if (node instanceof THREE.Mesh) {
           node.castShadow = true;

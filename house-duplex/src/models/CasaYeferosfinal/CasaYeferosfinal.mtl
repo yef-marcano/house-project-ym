@@ -1,0 +1,200 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl _Translucent_Glass_Tinted_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.031373 0.788235 0.945098
+Ks 0.330000 0.330000 0.330000
+d 0.480000
+map_Kd CasaYeferosfinal/_Translucent_Glass_Tinted_2.jpg
+
+newmtl ForegroundColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Steel_Brushed_Stainless
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Steel_Brushed_Stainless.jpg
+
+newmtl BackColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.635294 0.717647 0.776471
+Ks 0.330000 0.330000 0.330000
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl _Steel_Brushed_Stainless_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_1.jpg
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.227451 0.129412 0.062745
+Ks 0.330000 0.330000 0.330000
+
+newmtl _Steel_Brushed_Stainless_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_2.jpg
+
+newmtl _Steel_Brushed_Stainless_4
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_4.jpg
+
+newmtl _Steel_Brushed_Stainless_5
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_5.jpg
+
+newmtl _Steel_Brushed_Stainless_6
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_6.jpg
+
+newmtl _Steel_Brushed_Stainless_7
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_7.jpg
+
+newmtl _Steel_Brushed_Stainless_8
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_8.jpg
+
+newmtl _Wood_Cherry_Original_1
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Wood_Cherry_Original_1.jpg
+
+newmtl _Steel_Brushed_Stainless_9
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_9.jpg
+
+newmtl Tile_Limestone_Large
+Ka 0.000000 0.000000 0.000000
+Kd 0.933333 0.984314 0.901961
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Tile_Limestone_Large.jpg
+
+newmtl Marble_Carrara_Gold_Floor_Tile
+Ka 0.000000 0.000000 0.000000
+Kd 0.882353 0.874510 0.850980
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Marble_Carrara_Gold_Floor_Tile.jpg
+
+newmtl Brick_Rough_Dark
+Ka 0.000000 0.000000 0.000000
+Kd 0.368627 0.301961 0.207843
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Brick_Rough_Dark.jpg
+
+newmtl Pavers_Flagstone_Gray
+Ka 0.000000 0.000000 0.000000
+Kd 0.635294 0.635294 0.635294
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Pavers_Flagstone_Gray.jpg
+
+newmtl Tile_Large_Brown
+Ka 0.000000 0.000000 0.000000
+Kd 0.764706 0.698039 0.623529
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Tile_Large_Brown.jpg
+
+newmtl Polished_Concrete_Old
+Ka 0.000000 0.000000 0.000000
+Kd 0.898039 0.898039 0.898039
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Polished_Concrete_Old.jpg
+
+newmtl Color_M05
+Ka 0.000000 0.000000 0.000000
+Kd 0.447059 0.447059 0.447059
+Ks 0.330000 0.330000 0.330000
+
+newmtl _Cladding_Stucco_White_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.784314 0.705882 0.580392
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Cladding_Stucco_White_1.jpg
+
+newmtl _Color_A01_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.737255 0.780392 0.800000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_D01
+Ka 0.000000 0.000000 0.000000
+Kd 0.941176 0.941176 0.941176
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood_Plywood_Knots
+Ka 0.000000 0.000000 0.000000
+Kd 0.607843 0.368627 0.200000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Wood_Plywood_Knots.jpg
+
+newmtl Brick_Tumbled
+Ka 0.000000 0.000000 0.000000
+Kd 0.529412 0.517647 0.517647
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Brick_Tumbled.jpg
+
+newmtl Color_M00
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_A01
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.992157 0.972549
+Ks 0.330000 0.330000 0.330000
+
+newmtl Translucent_Glass_Tinted
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+d 0.240000
+map_Kd CasaYeferosfinal/Translucent_Glass_Tinted.jpg
+
+newmtl Metal_Steel_Textured_White
+Ka 0.000000 0.000000 0.000000
+Kd 0.298039 0.298039 0.298039
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Metal_Steel_Textured_White.jpg
+
+newmtl _Steel_Brushed_Stainless_3
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/_Steel_Brushed_Stainless_3.jpg
+
+newmtl M_0128_White
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Metal_Rough
+Ka 0.000000 0.000000 0.000000
+Kd 0.007843 0.007843 0.007843
+Ks 0.330000 0.330000 0.330000
+map_Kd CasaYeferosfinal/Metal_Rough.jpg
+

@@ -1,0 +1,185 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Tile_Large_Brown
+Ka 0.000000 0.000000 0.000000
+Kd 0.764706 0.698039 0.623529
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Tile_Large_Brown.jpg
+
+newmtl BackColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.635294 0.717647 0.776471
+Ks 0.330000 0.330000 0.330000
+
+newmtl Rough_Square_Concrete_Block
+Ka 0.000000 0.000000 0.000000
+Kd 0.482353 0.470588 0.443137
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Rough_Square_Concrete_Block.jpg
+
+newmtl Brick_Rough_Dark
+Ka 0.000000 0.000000 0.000000
+Kd 0.058824 0.047059 0.031373
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Brick_Rough_Dark.jpg
+
+newmtl Grass_Dark_Green
+Ka 0.000000 0.000000 0.000000
+Kd 0.415686 0.615686 0.215686
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Grass_Dark_Green.jpg
+
+newmtl Polished_Concrete_Old
+Ka 0.000000 0.000000 0.000000
+Kd 0.898039 0.898039 0.898039
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Polished_Concrete_Old.jpg
+
+newmtl Color_M05
+Ka 0.000000 0.000000 0.000000
+Kd 0.297059 0.297059 0.290059
+Ks 0.330000 0.330000 0.330000
+
+newmtl Stone_Flagstone_Ashlar
+Ka 0.000000 0.000000 0.000000
+Kd 0.686275 0.454902 0.400000
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Stone_Flagstone_Ashlar.jpg
+
+newmtl Stone_Masonry_Multi
+Ka 0.000000 0.000000 0.000000
+Kd 0.713725 0.686275 0.643137
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Stone_Masonry_Multi.jpg
+
+newmtl _Color_A01_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.737255 0.780392 0.800000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_D01
+Ka 0.000000 0.000000 0.000000
+Kd 0.941176 0.941176 0.941176
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood_Plywood_Knots
+Ka 0.000000 0.000000 0.000000
+Kd 0.607843 0.368627 0.200000
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Wood_Plywood_Knots.jpg
+
+newmtl Brick_Tumbled
+Ka 0.000000 0.000000 0.000000
+Kd 0.529412 0.517647 0.517647
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Brick_Tumbled.jpg
+
+newmtl Color_A01
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.992157 0.972549
+Ks 0.330000 0.330000 0.330000
+
+newmtl Cladding_Weathered
+Ka 0.000000 0.000000 0.000000
+Kd 0.435294 0.411765 0.376471
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Cladding_Weathered.jpg
+
+newmtl Brick_Rough_Tan
+Ka 0.000000 0.000000 0.000000
+Kd 0.654902 0.552941 0.321569
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Brick_Rough_Tan.jpg
+
+newmtl Cladding_Siding_White
+Ka 0.000000 0.000000 0.000000
+Kd 0.811765 0.811765 0.811765
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Cladding_Siding_White.jpg
+
+newmtl _Translucent_Glass_Tinted_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.031373 0.788235 0.945098
+Ks 0.330000 0.330000 0.330000
+d 0.480000
+map_Kd House1/_Translucent_Glass_Tinted_2.jpg
+
+newmtl Translucent_Glass_Tinted
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+d 0.240000
+map_Kd House1/Translucent_Glass_Tinted.jpg
+
+newmtl Tile_Limestone_Large
+Ka 0.000000 0.000000 0.000000
+Kd 0.933333 0.984314 0.901961
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Tile_Limestone_Large.jpg
+
+newmtl Metal_Steel_Textured_White
+Ka 0.000000 0.000000 0.000000
+Kd 0.298039 0.298039 0.298039
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Metal_Steel_Textured_White.jpg
+
+newmtl Brick_Antique_01
+Ka 0.000000 0.000000 0.000000
+Kd 0.576471 0.411765 0.278431
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Brick_Antique_01.jpg
+
+newmtl Cladding_Stucco_White
+Ka 0.000000 0.000000 0.000000
+Kd 0.784314 0.784314 0.784314
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Cladding_Stucco_White.jpg
+
+newmtl Brick_Basket
+Ka 0.000000 0.000000 0.000000
+Kd 0.901961 0.611765 0.596078
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Brick_Basket.jpg
+
+newmtl Wood_OSB
+Ka 0.00000 0.000000 0.000000
+Ka 0.00000 0.000000 0.000000
+Ka 0.00000 0.000000 0.000000
+map_Kd House1/Wood_OSB.jpg
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.596078 0.337255 0.164706
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Wood_Cherry_Original.jpg
+
+newmtl Wood_Veneer_01
+Ka 0.000000 0.000000 0.000000
+Kd 0.470588 0.274510 0.145098
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Wood_Veneer_01.jpg
+
+newmtl Wood_Floor_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.690196 0.498039
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Wood_Floor_Light.jpg
+
+newmtl Wood_Board_Cork
+Ka 0.000000 0.000000 0.000000
+Kd 0.843137 0.788235 0.450980
+Ks 0.330000 0.330000 0.330000
+map_Kd House1/Wood_Board_Cork.jpg
+
+newmtl ForegroundColor
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.000000 0.000000
+Ks 0.330000 0.330000 0.330000
+
